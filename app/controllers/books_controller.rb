@@ -41,7 +41,7 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1.json
   def update
   	@book.attributes = book_params
-    @book.attributes = params[:book][:author].select { |a| a.present? }
+    @book.author = params[:book][:author].select { |a| a.present? }
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
