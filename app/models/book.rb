@@ -1,10 +1,10 @@
 class Book < ActiveFedora::Base
 
-	property :title, predicate: ::RDF::DC.title, multiple:false do |index|
+	property :title, predicate: ::RDF::DC.title, multiple: false do |index|
 		index.as :stored_searchable
 	end
 
-	property :author, predicate: ::RDF::DC.creator, multiple:false do |index|
+	property :author, predicate: ::RDF::DC.creator, multiple:true do |index|
 		index.as :stored_searchable
 	end
 

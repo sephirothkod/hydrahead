@@ -9,7 +9,7 @@
   <strong>Author:</strong>
   <ul>
   <% @book.author.each do |author| %>
-    <li><%= author %></li>
+    <li><%= type(author) %></li>
   <% end %>
   </ul>
 </p>
