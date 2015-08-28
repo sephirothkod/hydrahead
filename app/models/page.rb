@@ -1,5 +1,6 @@
 class Page < ActiveFedora::Base
 
+	contains "pageContent"
 	property :number, predicate: ::RDF::URI.new('http://opaquenamespace.org/hydra/pageNumber'), multiple: false do |index|
 		index.as :stored_searchable
 		index.type :integer
@@ -10,5 +11,6 @@ class Page < ActiveFedora::Base
 	end
 
 	belongs_to :book, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
+	
 
 end
